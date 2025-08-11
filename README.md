@@ -30,14 +30,8 @@
 #### 安装依赖
 
 ```bash
-# 使用 pnpm (推荐)
+# 使用 pnpm
 pnpm install
-
-# 或使用 npm
-npm install
-
-# 或使用 yarn
-yarn install
 ```
 
 #### 开发模式
