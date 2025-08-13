@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "rfft-backend",
   "private": true,
   "version": "0.0.0",
   "type": "module",

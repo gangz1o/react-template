@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# React Template Monorepo 启动脚本
-echo "🚀 启动 React Template Monorepo..."
+# RFFT (React FastAPI Fullstack Template) 启动脚本
+echo "🚀 启动 RFFT (React FastAPI Fullstack Template)..."
 
 # 检查是否安装了必要的工具
 if ! command -v pnpm &> /dev/null; then

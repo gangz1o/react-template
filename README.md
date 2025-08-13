@@ -1,11 +1,21 @@
-# React Template Monorepo
+# RFFT - React FastAPI Fullstack Template
 
-这是一个全栈的monorepo项目，包含React前端和FastAPI后端。
+这是一个全栈的monorepo项目，包含React前端和FastAPI后端。RFFT代表 **R**eact **F**astAPI **F**ullstack **T**emplate。
 
-## 项目结构
+## 🚀 项目特性
+
+- **🎯 现代化技术栈** - 使用最新的React 19、FastAPI和TypeScript
+- **🏗️ Monorepo架构** - 前后端代码统一管理，便于开发和部署
+- **🔒 类型安全** - 完整的TypeScript支持，前后端类型一致
+- **⚡ 高性能** - Vite构建工具，FastAPI异步框架
+- **🎨 美观UI** - Tailwind CSS + shadcn/ui组件库
+- **🌍 国际化** - 支持多语言切换
+- **📱 响应式设计** - 支持各种设备和屏幕尺寸
+
+## 📁 项目结构
 
 ```
-react-template/
+rfft/
 ├── apps/
 │   ├── frontend/          # React前端应用
 │   │   ├── src/          # 源代码
@@ -17,16 +27,18 @@ react-template/
 │       ├── requirements.txt # Python依赖
 │       ├── pyproject.toml  # Python项目配置
 │       └── app/          # 应用模块
+├── start.sh              # 启动脚本 (macOS/Linux)
+├── start.bat             # 启动脚本 (Windows)
 ├── package.json          # 根目录配置
 └── README.md            # 项目说明
 ```
 
-## 技术栈
+## 🛠️ 技术栈
 
 ### 前端 (Frontend)
-- **React 19** - 现代React框架
-- **TypeScript** - 类型安全
-- **TanStack Router** - 类型安全的路由
+- **React 19** - 现代React框架，支持并发特性
+- **TypeScript** - 完整的类型安全
+- **TanStack Router** - 类型安全的路由解决方案
 - **Tailwind CSS** - 实用优先的CSS框架
 - **Vite** - 快速的构建工具
 - **Biome** - 代码格式化和检查
@@ -34,12 +46,12 @@ react-template/
 ### 后端 (Backend)
 - **FastAPI** - 现代、快速的Python Web框架
 - **Uvicorn** - ASGI服务器
-- **Pydantic** - 数据验证
-- **SQLAlchemy** - ORM
-- **PostgreSQL** - 数据库
-- **Redis** - 缓存
+- **Pydantic** - 数据验证和序列化
+- **SQLAlchemy** - ORM框架
+- **PostgreSQL** - 关系型数据库
+- **Redis** - 缓存和会话存储
 
-## 快速开始
+## 🚀 快速开始
 
 ### 前置要求
 
@@ -47,7 +59,19 @@ react-template/
 - Python 3.9+
 - pip 或 uv
 
-### 安装依赖
+### 一键启动（推荐）
+
+```bash
+# macOS/Linux
+./start.sh
+
+# Windows
+start.bat
+```
+
+### 手动启动
+
+#### 1. 安装依赖
 
 ```bash
 # 安装所有依赖
@@ -58,42 +82,33 @@ pnpm install
 cd apps/backend && pip install -r requirements.txt
 ```
 
-### 运行开发服务器
-
-#### 前端开发服务器
+#### 2. 启动后端
 
 ```bash
-# 在根目录运行
-pnpm dev:frontend
-
-# 或进入前端目录
-cd apps/frontend
-pnpm dev
-```
-
-前端将在 http://localhost:5173 运行
-
-#### 后端开发服务器
-
-```bash
-# 在根目录运行
 pnpm dev:backend
-
-# 或进入后端目录
-cd apps/backend
-python main.py
+# 或
+cd apps/backend && python3 main.py
 ```
 
 后端API将在 http://localhost:8000 运行
 
+#### 3. 启动前端
+
+```bash
+pnpm dev:frontend
+# 或
+cd apps/frontend && pnpm dev
+```
+
+前端将在 http://localhost:5173 运行
+
 ### 同时运行前后端
 
 ```bash
-# 在根目录运行
 pnpm dev
 ```
 
-## 构建和部署
+## 📦 构建和部署
 
 ### 构建前端
 
@@ -107,7 +122,7 @@ pnpm build:frontend
 pnpm build:backend
 ```
 
-## 开发工具
+## 🛠️ 开发工具
 
 ### 代码质量
 
@@ -123,25 +138,25 @@ black .
 isort .
 ```
 
-### 测试
+### 类型检查
 
 ```bash
-# 前端测试 (待配置)
-pnpm test
+# 前端TypeScript检查
+pnpm build:check
 
-# 后端测试
+# 后端类型检查（如果使用mypy）
 cd apps/backend
-pytest
+mypy .
 ```
 
-## API文档
+## 🌐 API文档
 
 启动后端服务后，可以访问：
 
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
 
-## 环境配置
+## 🔧 环境配置
 
 ### 前端环境变量
 
@@ -149,6 +164,7 @@ pytest
 
 ```env
 VITE_API_BASE_URL=http://localhost:8000
+VITE_APP_TITLE=RFFT
 ```
 
 ### 后端环境变量
@@ -158,11 +174,35 @@ VITE_API_BASE_URL=http://localhost:8000
 ```env
 DATABASE_URL=postgresql://user:password@localhost/dbname
 REDIS_URL=redis://localhost:6379
-SECRET_KEY=your-secret-key
+SECRET_KEY=your-secret-key-change-this-in-production
 DEBUG=true
+ENVIRONMENT=development
 ```
 
-## 贡献指南
+## 🧪 测试
+
+### 前端测试
+
+```bash
+cd apps/frontend
+pnpm test
+```
+
+### 后端测试
+
+```bash
+cd apps/backend
+pytest
+```
+
+## 📚 学习资源
+
+- [React 官方文档](https://react.dev/)
+- [FastAPI 官方文档](https://fastapi.tiangolo.com/)
+- [TanStack Router 文档](https://tanstack.com/router)
+- [Tailwind CSS 文档](https://tailwindcss.com/)
+
+## 🤝 贡献指南
 
 1. Fork 项目
 2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
@@ -170,6 +210,14 @@ DEBUG=true
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 打开 Pull Request
 
-## 许可证
+## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 🙏 致谢
+
+感谢以下开源项目为RFFT提供支持：
+- [React](https://react.dev/) - 用户界面库
+- [FastAPI](https://fastapi.tiangolo.com/) - Web框架
+- [TanStack](https://tanstack.com/) - 路由解决方案
+- [Tailwind CSS](https://tailwindcss.com/) - CSS框架

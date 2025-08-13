@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-echo 🚀 启动 React Template Monorepo...
+echo 🚀 启动 RFFT (React FastAPI Fullstack Template)...
 
 REM 检查是否安装了必要的工具
 where pnpm >nul 2>nul

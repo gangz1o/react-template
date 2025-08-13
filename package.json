@@ -1,5 +1,5 @@
 {
-  "name": "react-template-monorepo",
+  "name": "rfft",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,19 +7,19 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "pnpm --filter frontend dev",
-    "dev:frontend": "pnpm --filter frontend dev",
-    "dev:backend": "pnpm --filter backend dev",
-    "build": "pnpm --filter frontend build",
-    "build:frontend": "pnpm --filter frontend build",
-    "build:backend": "pnpm --filter backend build",
-    "build:check": "pnpm --filter frontend build:check",
-    "lint": "pnpm --filter frontend lint",
-    "lint:fix": "pnpm --filter frontend lint:fix",
-    "format": "pnpm --filter frontend format",
-    "preview": "pnpm --filter frontend preview",
+    "dev": "pnpm --filter rfft-frontend dev",
+    "dev:frontend": "pnpm --filter rfft-frontend dev",
+    "dev:backend": "pnpm --filter rfft-backend dev",
+    "build": "pnpm --filter rfft-frontend build",
+    "build:frontend": "pnpm --filter rfft-frontend build",
+    "build:backend": "pnpm --filter rfft-backend build",
+    "build:check": "pnpm --filter rfft-frontend build:check",
+    "lint": "pnpm --filter rfft-frontend lint",
+    "lint:fix": "pnpm --filter rfft-frontend lint:fix",
+    "format": "pnpm --filter rfft-frontend format",
+    "preview": "pnpm --filter rfft-frontend preview",
     "install:all": "pnpm install",
-    "clean": "pnpm --filter frontend clean && pnpm --filter backend clean"
+    "clean": "pnpm --filter rfft-frontend clean && pnpm --filter rfft-backend clean"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",

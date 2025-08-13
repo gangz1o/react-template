@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "react-template-backend"
+name = "rfft-backend"
 version = "1.0.0"
-description = "Backend API for React Template Monorepo"
+description = "Backend API for RFFT (React FastAPI Fullstack Template)"
 authors = [{name = "Developer", email = "dev@example.com"}]
 readme = "README.md"
 requires-python = ">=3.9"

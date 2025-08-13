@@ -1,4 +1,4 @@
-# 开发指南
+# RFFT 开发指南
 
 ## 🚀 快速开始
 
@@ -21,9 +21,7 @@ start.bat
 pnpm install
 
 # 安装后端依赖
-cd apps/backend
-pip install -r requirements.txt
-cd ../..
+cd apps/backend && pip install -r requirements.txt
 ```
 
 #### 2. 启动后端
@@ -81,7 +79,7 @@ python3 main.py
 ## 📁 项目结构
 
 ```
-react-template/
+rfft/
 ├── apps/
 │   ├── frontend/          # React前端应用
 │   │   ├── src/          # 源代码
