@@ -18,9 +18,9 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./apps/frontend/src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["apps/frontend/src"],
-  "exclude": ["node_modules", "dist", "apps/frontend/node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

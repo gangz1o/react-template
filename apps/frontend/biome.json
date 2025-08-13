@@ -40,6 +40,7 @@
     }
   },
   "files": {
+    "ignoreUnknown": true,
     "includes": [
       "src/**/*.ts",
       "src/**/*.tsx",
@@ -49,7 +50,8 @@
     "experimentalScannerIgnores": [
       ".cargo",
       ".git",
-      "target"
+      "target",
+      "src/routeTree.gen.ts"
     ]
   },
   "formatter": {

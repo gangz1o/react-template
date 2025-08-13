@@ -1,231 +1,175 @@
-# 🚀 React Template - 现代化 React 开发模板
+# React Template Monorepo
 
-[English](#-react-template---modern-react-development-template) | [中文](#-react-template---现代化-react-开发模板)
+这是一个全栈的monorepo项目，包含React前端和FastAPI后端。
 
----
+## 项目结构
 
-## 🇨🇳 中文版
-
-### ✨ 项目特性
-
-这是一个基于最新技术的现代化 React 开发模板，集成了业界最佳实践和工具链：
-
-- 🎯 **React 19** - 使用最新的 React 版本，享受最新的特性和性能优化
-- 🔷 **TypeScript** - 完整的类型安全，提升开发体验和代码质量
-- 🛣️ **TanStack Router** - 类型安全的路由解决方案，支持文件路由和代码分割
-- 🎨 **shadcn/ui** - 美观且可定制的 UI 组件库，基于 Radix UI 和 Tailwind CSS
-- 🌍 **react-i18next** - 完整的国际化解决方案，支持多语言切换
-- 🎨 **Tailwind CSS v4** - 最新的原子化 CSS 框架
-- ⚡ **Vite** - 极速的前端构建工具
-- 🔧 **Biome** - 快速的代码格式化和 linting 工具
-- 📱 **响应式设计** - 支持各种设备和屏幕尺寸
-
-### 🚀 快速开始
-
-#### 环境要求
-
-- Node.js 18+ 
-- pnpm/npm/yarn
-
-#### 安装依赖
-
-```bash
-# 使用 pnpm
-pnpm install
+```
+react-template/
+├── apps/
+│   ├── frontend/          # React前端应用
+│   │   ├── src/          # 源代码
+│   │   ├── public/       # 静态资源
+│   │   ├── package.json  # 前端依赖
+│   │   └── vite.config.ts # Vite配置
+│   └── backend/          # FastAPI后端应用
+│       ├── main.py       # 主应用文件
+│       ├── requirements.txt # Python依赖
+│       ├── pyproject.toml  # Python项目配置
+│       └── app/          # 应用模块
+├── package.json          # 根目录配置
+└── README.md            # 项目说明
 ```
 
-#### 开发模式
+## 技术栈
+
+### 前端 (Frontend)
+- **React 19** - 现代React框架
+- **TypeScript** - 类型安全
+- **TanStack Router** - 类型安全的路由
+- **Tailwind CSS** - 实用优先的CSS框架
+- **Vite** - 快速的构建工具
+- **Biome** - 代码格式化和检查
+
+### 后端 (Backend)
+- **FastAPI** - 现代、快速的Python Web框架
+- **Uvicorn** - ASGI服务器
+- **Pydantic** - 数据验证
+- **SQLAlchemy** - ORM
+- **PostgreSQL** - 数据库
+- **Redis** - 缓存
+
+## 快速开始
+
+### 前置要求
+
+- Node.js 18+ 和 pnpm
+- Python 3.9+
+- pip 或 uv
+
+### 安装依赖
 
 ```bash
+# 安装所有依赖
+pnpm install:all
+
+# 或分别安装
+pnpm install
+cd apps/backend && pip install -r requirements.txt
+```
+
+### 运行开发服务器
+
+#### 前端开发服务器
+
+```bash
+# 在根目录运行
+pnpm dev:frontend
+
+# 或进入前端目录
+cd apps/frontend
 pnpm dev
 ```
 
-#### 构建生产版本
+前端将在 http://localhost:5173 运行
+
+#### 后端开发服务器
 
 ```bash
-pnpm build
+# 在根目录运行
+pnpm dev:backend
+
+# 或进入后端目录
+cd apps/backend
+python main.py
 ```
 
-#### 代码格式化
+后端API将在 http://localhost:8000 运行
+
+### 同时运行前后端
 
 ```bash
-# 检查代码格式
-pnpm lint
-
-# 自动修复格式问题
-pnpm lint:fix
-
-# 格式化代码
-pnpm format
-```
-
-### 🏗️ 项目结构
-
-```
-src/
-├── components/          # 组件目录
-│   ├── common/         # 通用组件 (主题切换、语言切换等)
-│   ├── ui/            # shadcn/ui 组件
-│   └── theme/         # 主题相关组件
-├── routes/             # 路由文件 (TanStack Router)
-├── lib/               # 工具函数和配置
-├── assets/            # 静态资源
-└── main.tsx          # 应用入口
-```
-
-### 🎨 主题系统
-
-- 🌞 **浅色主题** - 明亮清爽的视觉体验
-- 🌙 **深色主题** - 护眼的深色模式
-- 🖥️ **系统主题** - 自动跟随系统设置
-
-### 🌍 国际化支持
-
-- 🇺🇸 英语 (English)
-- 🇨🇳 中文 (简体)
-- 🔄 动态语言切换
-- 📝 类型安全的翻译键
-
-### 🛠️ 开发工具
-
-- **Biome** - 代码格式化和 linting
-- **TypeScript** - 类型检查和智能提示
-- **ESLint** - 代码质量检查
-- **TanStack Router Devtools** - 路由调试工具
-
-### 📦 主要依赖
-
-- `@tanstack/react-router` - 现代化路由解决方案
-- `@radix-ui/react-*` - 无障碍 UI 原语
-- `class-variance-authority` - 组件变体管理
-- `clsx` - 条件类名工具
-- `lucide-react` - 精美图标库
-- `tailwind-merge` - Tailwind CSS 类名合并
-
----
-
-## 🇺🇸 English Version
-
-### ✨ Features
-
-This is a modern React development template based on the latest technologies, integrating industry best practices and toolchains:
-
-- 🎯 **React 19** - Use the latest React version with new features and performance optimizations
-- 🔷 **TypeScript** - Complete type safety for better development experience and code quality
-- 🛣️ **TanStack Router** - Type-safe routing solution with file-based routing and code splitting
-- 🎨 **shadcn/ui** - Beautiful and customizable UI component library based on Radix UI and Tailwind CSS
-- 🌍 **react-i18next** - Complete internationalization solution with multi-language support
-- 🎨 **Tailwind CSS v4** - Latest atomic CSS framework
-- ⚡ **Vite** - Lightning-fast frontend build tool
-- 🔧 **Biome** - Fast code formatting and linting tool
-- 📱 **Responsive Design** - Support for various devices and screen sizes
-
-### 🚀 Quick Start
-
-#### Requirements
-
-- Node.js 18+
-- pnpm/npm/yarn
-
-#### Install Dependencies
-
-```bash
-# Using pnpm (recommended)
-pnpm install
-
-# Or using npm
-npm install
-
-# Or using yarn
-yarn install
-```
-
-#### Development Mode
-
-```bash
+# 在根目录运行
 pnpm dev
 ```
 
-#### Build for Production
+## 构建和部署
+
+### 构建前端
 
 ```bash
-pnpm build
+pnpm build:frontend
 ```
 
-#### Code Formatting
+### 构建后端
 
 ```bash
-# Check code format
+pnpm build:backend
+```
+
+## 开发工具
+
+### 代码质量
+
+```bash
+# 前端代码检查
 pnpm lint
-
-# Auto-fix format issues
 pnpm lint:fix
-
-# Format code
 pnpm format
+
+# 后端代码格式化
+cd apps/backend
+black .
+isort .
 ```
 
-### 🏗️ Project Structure
+### 测试
 
-```
-src/
-├── components/          # Components directory
-│   ├── common/         # Common components (theme toggle, language switch, etc.)
-│   ├── ui/            # shadcn/ui components
-│   └── theme/         # Theme-related components
-├── routes/             # Route files (TanStack Router)
-├── lib/               # Utility functions and configurations
-├── assets/            # Static assets
-└── main.tsx          # Application entry point
+```bash
+# 前端测试 (待配置)
+pnpm test
+
+# 后端测试
+cd apps/backend
+pytest
 ```
 
-### 🎨 Theme System
+## API文档
 
-- 🌞 **Light Theme** - Bright and clean visual experience
-- 🌙 **Dark Theme** - Eye-friendly dark mode
-- 🖥️ **System Theme** - Automatically follows system settings
+启动后端服务后，可以访问：
 
-### 🌍 Internationalization
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
 
-- 🇺🇸 English
-- 🇨🇳 Chinese (Simplified)
-- 🔄 Dynamic language switching
-- 📝 Type-safe translation keys
+## 环境配置
 
-### 🛠️ Development Tools
+### 前端环境变量
 
-- **Biome** - Code formatting and linting
-- **TypeScript** - Type checking and intelligent suggestions
-- **ESLint** - Code quality checking
-- **TanStack Router Devtools** - Routing debugging tools
+在 `apps/frontend/.env.local` 中配置：
 
-### 📦 Key Dependencies
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
 
-- `@tanstack/react-router` - Modern routing solution
-- `@radix-ui/react-*` - Accessible UI primitives
-- `class-variance-authority` - Component variant management
-- `clsx` - Conditional class name utility
-- `lucide-react` - Beautiful icon library
-- `tailwind-merge` - Tailwind CSS class name merging
+### 后端环境变量
 
----
+在 `apps/backend/.env` 中配置：
 
-## 🤝 Contributing
+```env
+DATABASE_URL=postgresql://user:password@localhost/dbname
+REDIS_URL=redis://localhost:6379
+SECRET_KEY=your-secret-key
+DEBUG=true
+```
 
-欢迎提交 Issue 和 Pull Request！
+## 贡献指南
 
-Welcome to submit Issues and Pull Requests!
+1. Fork 项目
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开 Pull Request
 
-## 📄 License
+## 许可证
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-MIT License - see [LICENSE](LICENSE) file for details
-
----
-
-<div align="center">
-
-**Made with ❤️ by the React Template Team**
-
-</div>
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
