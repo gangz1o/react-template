@@ -1,22 +1,56 @@
 {
-  "$schema": " https://biomejs.dev/schemas/1.8.1/schema.json ",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "a11y": {
-        "useKeyWithClickEvents": "off",
-        "useKeyWithMouseEvents": "off"
+      "style": {
+        "noParameterAssign": "error",
+        "useDefaultParameterLast": "error",
+        "useSingleVarDeclarator": "error",
+        "useConst": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "useSelfClosingElements": "error",
+        "useNumberNamespace": "error",
+        "useAsConstAssertion": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useTemplate": "error",
+        "useEnumInitializers": "error",
+        "useImportType": "off",
+        "noNonNullAssertion": "off"
+      },
+      "correctness": {
+        "noUndeclaredDependencies": "error"
       },
       "suspicious": {
+        "noVar": "on",
         "noExplicitAny": "off"
       },
-      "style": {
-        "noNonNullAssertion": "off",
-        "noUselessElse": "warn",
-        "useTemplate": "off"
+      "nursery": {
+        "noFloatingPromises": "error",
+        "noImportCycles": "error"
       }
     }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "off"
+      }
+    }
+  },
+  "files": {
+    "includes": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx"
+    ],
+    "experimentalScannerIgnores": [
+      ".cargo",
+      ".git",
+      "target"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -31,6 +65,17 @@
       "jsxQuoteStyle": "single",
       "semicolons": "asNeeded",
       "trailingCommas": "all"
+    }
+  },
+  "css": {
+    "linter": {
+      "enabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "lineWidth": 1
     }
   }
 }

@@ -10,9 +10,9 @@ function Index() {
 
   return (
     <div className='p-4 flex flex-col gap-4'>
-      <div>{t("title")}</div>
-      <p>{t("common.confirm")}</p>
-      <p>{t("common.cancel")}</p>
+      <div>{t('title')}</div>
+      <p>{t('common.confirm')}</p>
+      <p>{t('common.cancel')}</p>
     </div>
   )
 }

@@ -1,8 +1,7 @@
 {
   "title": "标题",
-  "common": { 
-     "confirm": "确认", 
-     "cancel": "取消" 
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消"
   }
 }
-

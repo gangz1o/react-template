@@ -1,12 +1,9 @@
-import { useTranslation } from 'react-i18next'
 import i18n from '@/i18n'
+import { LanguagesIcon } from 'lucide-react'
 import { Button } from '../ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu'
-import { ChevronDownIcon, LanguagesIcon } from 'lucide-react'
 
 const LanguageSwitch = () => {
-  const { t } = useTranslation()
-
   const handleLanguageChange = (language: string) => {
     i18n.changeLanguage(language)
   }
