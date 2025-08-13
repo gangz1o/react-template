@@ -1,4 +1,9 @@
 {
+  "theme": {
+    "light": "亮色",
+    "dark": "暗色",
+    "system": "跟随系统"
+  },
   "title": "标题",
   "common": {
     "confirm": "确认",
